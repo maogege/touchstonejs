@@ -2685,7 +2685,7 @@ body {
 .inner {
   margin-left: auto;
   margin-right: auto;
-  max-width: 940px;
+  max-width: 740px;
   padding-left: 20px;
   padding-right: 20px;
   position: relative;
@@ -2705,7 +2705,7 @@ body {
   max-width: 640px;
 }
 .header * + * {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 .header a {
   color: white;
@@ -2714,12 +2714,35 @@ body {
 .header a:hover {
   text-decoration: underline;
 }
-.header p {
-  margin: 1em 0;
+.header h1,
+.header h2 {
+  color: white;
+  font-weight: 300;
+}
+.header h1 {
+  font-size: 24px;
+  margin-top: 40px;
+}
+.header h2 {
+  font-size: 17px;
+}
+@media (min-width: 768px) {
+  .header h1 {
+    font-size: 32px;
+    margin-top: 40px;
+  }
+  .header h2 {
+    font-size: 24px;
+    font-weight: 100;
+    letter-spacing: 0.02em;
+  }
 }
 .header-brand {
-  width: 200px;
-  height: 200px;
+  width: 120px;
+  height: 120px;
+}
+.header-form-title {
+  margin-top: 80px;
 }
 .header-form {
   display: -webkit-flex;
@@ -2868,10 +2891,64 @@ body {
   color: #4cd964;
 }
 .roadmap .preview {
+  width: 240px;
+  height: 428px;
+  background: url('../../homescreen.png') no-repeat left top;
+  background-size: contain;
   display: none;
-  left: 104px;
+  left: 84px;
   position: absolute;
-  top: 148px;
+  top: 133px;
+}
+.preview-button-overlay {
+  width: 240px;
+  height: 428px;
+  -webkit-transition: opacity 300ms;
+  -o-transition: opacity 300ms;
+  transition: opacity 300ms;
+  background-color: rgba(0, 0, 0, 0.66);
+  color: white;
+  left: 0;
+  padding: 140px 15px;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+.preview-button-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+.demo-button,
+.preview-button {
+  background-repeat: repeat-x;
+  background-image: -webkit-linear-gradient(135deg, #c32983, #c32945);
+  background-image: -o-linear-gradient(135deg, #c32983, #c32945);
+  background-image: linear-gradient(135deg, #c32983, #c32945);
+  border-radius: 3px;
+  color: white;
+  display: block;
+  margin-top: 15px;
+  padding: 15px;
+  text-align: center;
+}
+.demo-button:hover,
+.preview-button:hover,
+.demo-button:focus,
+.preview-button:focus {
+  background-repeat: repeat-x;
+  background-image: -webkit-linear-gradient(135deg, #d43290, #d4324f);
+  background-image: -o-linear-gradient(135deg, #d43290, #d4324f);
+  background-image: linear-gradient(135deg, #d43290, #d4324f);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  color: white;
+  text-decoration: none;
+}
+.demo-button:active,
+.preview-button:active {
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25);
+  background: #c32945;
 }
 @media (min-width: 768px) {
   .roadmap .preview {
@@ -2879,10 +2956,9 @@ body {
   }
   .roadmap > .inner {
     background: url('/iphone-preview.png') no-repeat left 4em;
-    background-size: contain;
-    height: 900px;
+    height: 720px;
     padding-bottom: 4em;
-    padding-top: 80px;
+    padding-top: 60px;
     padding-left: 460px;
   }
   .roadmap-list-wrapper {
@@ -2892,6 +2968,9 @@ body {
     background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.33), rgba(255, 255, 255, 0));
     border-radius: 2em;
     padding: 20px;
+  }
+  .demo-button {
+    display: none;
   }
 }
 .footer {
